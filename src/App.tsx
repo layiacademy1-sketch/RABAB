@@ -65,6 +65,30 @@ const BUSINESSES: Business[] = [
       prixFacture: '250 €'
     }
   },
+  { 
+    id: 'luxurycar', 
+    name: 'LUXURYCAR', 
+    subtitle: 'Formation Snapchat', 
+    status: 'special',
+    info: {
+      nom: 'LUXURYCAR',
+      mail: 'non communiqué',
+      telephone: 'non communiqué',
+      snapchat: 'luxurycar76'
+    }
+  },
+  { 
+    id: 'hachim', 
+    name: 'HACHIM', 
+    subtitle: 'Formation Snapchat', 
+    status: 'special',
+    info: {
+      nom: 'HACHIM',
+      mail: 'non communiqué',
+      telephone: 'non communiqué',
+      snapchat: 'hachim269'
+    }
+  },
 ];
 
 // --- Components ---
@@ -134,7 +158,7 @@ const Dashboard = ({ onNavigate }: { onNavigate: (view: View) => void, key?: Rea
           className="bg-white w-full aspect-square rounded-3xl flex flex-col items-center justify-center p-8 shadow-2xl"
         >
           <p className="text-black/60 text-sm font-medium mb-2 uppercase tracking-wider">Total généré depuis le début</p>
-          <h3 className="text-black text-6xl font-bold">810 €</h3>
+          <h3 className="text-black text-6xl font-bold">890 €</h3>
         </motion.div>
 
         {/* Action Section */}
