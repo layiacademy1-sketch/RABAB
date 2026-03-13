@@ -74,7 +74,8 @@ const BUSINESSES: Business[] = [
       nom: 'LUXURYCAR',
       mail: 'non communiqué',
       telephone: 'non communiqué',
-      snapchat: 'luxurycar76'
+      snapchat: 'luxurycar76',
+      prixFacture: '250 €'
     }
   },
   { 
@@ -86,7 +87,8 @@ const BUSINESSES: Business[] = [
       nom: 'HACHIM',
       mail: 'non communiqué',
       telephone: 'non communiqué',
-      snapchat: 'hachim269'
+      snapchat: 'hachim269',
+      prixFacture: '250 €'
     }
   },
 ];
