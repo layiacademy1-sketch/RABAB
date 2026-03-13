@@ -32,6 +32,7 @@ interface Business {
     mail: string;
     telephone: string;
     snapchat: string;
+    prixFacture?: string;
   };
 }
 
@@ -47,7 +48,8 @@ const BUSINESSES: Business[] = [
       nom: 'OASIS',
       mail: 'non communiqué',
       telephone: '06 67 66 09 74',
-      snapchat: 'oasispomcassis6'
+      snapchat: 'oasispomcassis6',
+      prixFacture: '250 €'
     }
   },
   { 
@@ -59,7 +61,8 @@ const BUSINESSES: Business[] = [
       nom: 'RESELSHOP',
       mail: 'non communiqué',
       telephone: 'non communiqué',
-      snapchat: 'iam_reselshop'
+      snapchat: 'iam_reselshop',
+      prixFacture: '250 €'
     }
   },
 ];
@@ -252,6 +255,12 @@ const BusinessDetail = ({ business, onBack }: { business: Business, onBack: () =
               <p className="text-white/40 text-xs uppercase mb-1">Snapchat</p>
               <p className="text-[#FACC15] text-lg font-bold">{business.info.snapchat}</p>
             </div>
+            {business.info.prixFacture && (
+              <div className="bg-white/5 p-4 rounded-2xl border border-white/10">
+                <p className="text-white/40 text-xs uppercase mb-1">Prix de la facture</p>
+                <p className="text-white text-lg font-bold">{business.info.prixFacture}</p>
+              </div>
+            )}
           </div>
         </div>
       ) : business.status === 'active' ? (
