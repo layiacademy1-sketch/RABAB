@@ -91,6 +91,32 @@ const BUSINESSES: Business[] = [
       prixFacture: '250 €'
     }
   },
+  { 
+    id: 'anael', 
+    name: 'ANAEL', 
+    subtitle: 'Formation Snapchat', 
+    status: 'special',
+    info: {
+      nom: 'ANAEL',
+      mail: 'non communiqué',
+      telephone: '06 08 63 06 44',
+      snapchat: 'non communiqué',
+      prixFacture: '250 €'
+    }
+  },
+  { 
+    id: 'lelbinav', 
+    name: 'LELBINAV', 
+    subtitle: 'Formation Snapchat', 
+    status: 'special',
+    info: {
+      nom: 'LELBINAV',
+      mail: 'non communiqué',
+      telephone: '07 64 44 85 76',
+      snapchat: 'L_lelb2021',
+      prixFacture: '250 €'
+    }
+  },
 ];
 
 // --- Components ---
@@ -153,14 +179,18 @@ const Dashboard = ({ onNavigate }: { onNavigate: (view: View) => void, key?: Rea
         <h2 className="text-xs font-bold tracking-[0.3em] text-[#FACC15] uppercase">Business</h2>
       </header>
 
-      <div className="flex-1 flex flex-col items-center justify-center space-y-8">
+      <div className="flex-1 flex flex-col items-center justify-center space-y-12">
         {/* Total Generated Block */}
         <motion.div 
           whileHover={{ scale: 1.02 }}
-          className="bg-white w-full aspect-square rounded-3xl flex flex-col items-center justify-center p-8 shadow-2xl"
+          className="bg-white w-full py-10 px-6 rounded-[2.5rem] flex flex-col items-center justify-center shadow-[0_20px_50px_rgba(255,255,255,0.1)] relative overflow-hidden"
         >
-          <p className="text-black/60 text-sm font-medium mb-2 uppercase tracking-wider">Total généré depuis le début</p>
-          <h3 className="text-black text-6xl font-bold">890 €</h3>
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#FACC15] to-transparent opacity-50" />
+          <p className="text-black/40 text-[10px] font-bold mb-3 uppercase tracking-[0.2em]">Total généré depuis le début</p>
+          <div className="flex items-baseline space-x-2">
+            <h3 className="text-black text-6xl font-black tracking-tighter">890</h3>
+            <span className="text-[#FACC15] text-3xl font-bold">€</span>
+          </div>
         </motion.div>
 
         {/* Action Section */}
