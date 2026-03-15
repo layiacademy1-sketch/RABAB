@@ -243,7 +243,10 @@ const BusinessList = ({ onBack, onSelect }: { onBack: () => void, onSelect: (b: 
                 )}
               </div>
               <div>
-                <h3 className="text-white font-bold">{business.name}</h3>
+                <div className="flex items-center space-x-2">
+                  <h3 className="text-white font-bold">{business.name}</h3>
+                  <span className="text-emerald-500 text-[10px] font-bold uppercase tracking-wider">Tâche effectuer</span>
+                </div>
                 <p className="text-white/40 text-xs">
                   {business.subtitle || (business.status === 'coming-soon' ? 'Bientôt disponible' : 'Actif')}
                 </p>
