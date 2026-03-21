@@ -40,81 +40,29 @@ interface Business {
 
 const BUSINESSES: Business[] = [
   { 
-    id: 'oasis', 
-    name: 'OASIS', 
+    id: 'diawara', 
+    name: 'DIAWARA', 
     subtitle: 'Formation Snapchat', 
     status: 'special',
     info: {
-      nom: 'OASIS',
-      mail: 'non communiqué',
-      telephone: '06 67 66 09 74',
-      snapchat: 'oasispomcassis6',
-      prixFacture: '250 €'
-    }
-  },
-  { 
-    id: 'reselshop', 
-    name: 'RESELSHOP', 
-    subtitle: 'Formation Snapchat', 
-    status: 'special',
-    info: {
-      nom: 'RESELSHOP',
+      nom: 'DIAWARA',
       mail: 'non communiqué',
       telephone: 'non communiqué',
-      snapchat: 'iam_reselshop',
-      prixFacture: '250 €'
+      snapchat: 'miro.gdd',
+      prixFacture: '129,99 €'
     }
   },
   { 
-    id: 'luxurycar', 
-    name: 'LUXURYCAR', 
-    subtitle: 'Formation Snapchat', 
+    id: 'thibault', 
+    name: 'Thibault', 
+    subtitle: 'Création de site internet vitrine', 
     status: 'special',
     info: {
-      nom: 'LUXURYCAR',
+      nom: 'Thibault',
       mail: 'non communiqué',
       telephone: 'non communiqué',
-      snapchat: 'luxurycar76',
-      prixFacture: '250 €'
-    }
-  },
-  { 
-    id: 'hachim', 
-    name: 'HACHIM', 
-    subtitle: 'Formation Snapchat', 
-    status: 'special',
-    info: {
-      nom: 'HACHIM',
-      mail: 'non communiqué',
-      telephone: 'non communiqué',
-      snapchat: 'hachim269',
-      prixFacture: '250 €'
-    }
-  },
-  { 
-    id: 'anael', 
-    name: 'ANAEL', 
-    subtitle: 'Formation Snapchat', 
-    status: 'special',
-    info: {
-      nom: 'ANAEL',
-      mail: 'non communiqué',
-      telephone: '06 08 63 06 44',
-      snapchat: 'non communiqué',
-      prixFacture: '250 €'
-    }
-  },
-  { 
-    id: 'lelbinav', 
-    name: 'LELBINAV', 
-    subtitle: 'Formation Snapchat', 
-    status: 'special',
-    info: {
-      nom: 'LELBINAV',
-      mail: 'non communiqué',
-      telephone: '07 64 44 85 76',
-      snapchat: 'L_lelb2021',
-      prixFacture: '250 €'
+      snapchat: 'tidji76',
+      prixFacture: '99,99 €'
     }
   },
 ];
@@ -188,7 +136,7 @@ const Dashboard = ({ onNavigate }: { onNavigate: (view: View) => void, key?: Rea
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#FACC15] to-transparent opacity-50" />
           <p className="text-black/40 text-[10px] font-bold mb-3 uppercase tracking-[0.2em]">Total généré depuis le début</p>
           <div className="flex items-baseline space-x-2">
-            <h3 className="text-black text-6xl font-black tracking-tighter">890</h3>
+            <h3 className="text-black text-6xl font-black tracking-tighter">970</h3>
             <span className="text-[#FACC15] text-3xl font-bold">€</span>
           </div>
         </motion.div>
@@ -245,7 +193,7 @@ const BusinessList = ({ onBack, onSelect }: { onBack: () => void, onSelect: (b: 
               <div>
                 <div className="flex items-center space-x-2">
                   <h3 className="text-white font-bold">{business.name}</h3>
-                  <span className="text-emerald-500 text-[10px] font-bold uppercase tracking-wider">Tâche effectuer</span>
+                  <span className="text-yellow-500 text-[10px] font-bold uppercase tracking-wider">En attente</span>
                 </div>
                 <p className="text-white/40 text-xs">
                   {business.subtitle || (business.status === 'coming-soon' ? 'Bientôt disponible' : 'Actif')}
