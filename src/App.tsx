@@ -204,11 +204,6 @@ const BusinessList = ({ onBack, onSelect }: { onBack: () => void, onSelect: (b: 
           </motion.div>
         ))}
       </div>
-
-      <div className="mt-8 p-8 border-2 border-dashed border-white/10 rounded-3xl flex flex-col items-center justify-center text-white/20">
-        <Plus className="w-8 h-8 mb-2" />
-        <p className="text-sm font-medium">Ajouter un business</p>
-      </div>
     </motion.div>
   );
 };
