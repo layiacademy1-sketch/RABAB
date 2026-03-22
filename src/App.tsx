@@ -24,7 +24,7 @@ interface Business {
   id: string;
   name: string;
   subtitle?: string;
-  status: 'active' | 'coming-soon' | 'special';
+  status: 'active' | 'coming-soon' | 'special' | 'completed';
   monthlyGain?: number;
   weeklyGain?: number;
   info?: {
@@ -43,7 +43,7 @@ const BUSINESSES: Business[] = [
     id: 'diawara', 
     name: 'DIAWARA', 
     subtitle: 'Formation Snapchat', 
-    status: 'special',
+    status: 'completed',
     info: {
       nom: 'DIAWARA',
       mail: 'non communiqué',
@@ -56,7 +56,7 @@ const BUSINESSES: Business[] = [
     id: 'thibault', 
     name: 'Thibault', 
     subtitle: 'Création de site internet vitrine', 
-    status: 'special',
+    status: 'completed',
     info: {
       nom: 'Thibault',
       mail: 'non communiqué',
@@ -198,14 +198,6 @@ const BusinessList = ({ onBack, onSelect }: { onBack: () => void, onSelect: (b: 
 
       <h2 className="text-3xl font-bold text-white mb-8">Tâches à effectuer</h2>
 
-      <div className="mb-8 p-4 bg-[#FACC15]/10 border border-[#FACC15]/20 rounded-2xl">
-        <p className="text-[#FACC15] text-xs font-medium leading-relaxed">
-          Nouveau client : Damien a été ajouté à la liste des tâches avec une prestation de "Consulting gestion réseaux sociaux".
-          <br />
-          Facture : Le montant de 960,00 € est enregistré dans les détails du client.
-        </p>
-      </div>
-
       <div className="space-y-4">
         {BUSINESSES.map((business) => (
           <motion.div
@@ -215,9 +207,15 @@ const BusinessList = ({ onBack, onSelect }: { onBack: () => void, onSelect: (b: 
             className="bg-white/5 border border-white/10 p-5 rounded-2xl flex items-center justify-between cursor-pointer hover:bg-white/10 transition-colors"
           >
             <div className="flex items-center space-x-4">
-              <div className={`p-3 rounded-xl ${business.status === 'coming-soon' ? 'bg-white/5' : 'bg-[#FACC15]/10'}`}>
+              <div className={`p-3 rounded-xl ${
+                business.status === 'coming-soon' ? 'bg-white/5' : 
+                business.status === 'completed' ? 'bg-green-500/10' :
+                'bg-[#FACC15]/10'
+              }`}>
                 {business.status === 'coming-soon' ? (
                   <Construction className="w-6 h-6 text-white/40" />
+                ) : business.status === 'completed' ? (
+                  <TrendingUp className="w-6 h-6 text-green-500" />
                 ) : business.status === 'special' ? (
                   <Flower2 className="w-6 h-6 text-[#FACC15]" />
                 ) : (
@@ -227,7 +225,11 @@ const BusinessList = ({ onBack, onSelect }: { onBack: () => void, onSelect: (b: 
               <div>
                 <div className="flex items-center space-x-2">
                   <h3 className="text-white font-bold">{business.name}</h3>
-                  <span className="text-yellow-500 text-[10px] font-bold uppercase tracking-wider">En attente</span>
+                  {business.status === 'completed' ? (
+                    <span className="text-green-500 text-[10px] font-bold uppercase tracking-wider">tache effectuer</span>
+                  ) : (
+                    <span className="text-yellow-500 text-[10px] font-bold uppercase tracking-wider">En attente</span>
+                  )}
                 </div>
                 <p className="text-white/40 text-xs">
                   {business.subtitle || (business.status === 'coming-soon' ? 'Bientôt disponible' : 'Actif')}
