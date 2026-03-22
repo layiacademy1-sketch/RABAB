@@ -65,6 +65,32 @@ const BUSINESSES: Business[] = [
       prixFacture: '99,99 €'
     }
   },
+  { 
+    id: 'rohff', 
+    name: 'ROHFF', 
+    subtitle: 'consulting pour le gestion réseaux sociaux du chanteur rohff', 
+    status: 'special',
+    info: {
+      nom: 'ROHFF',
+      mail: 'non communiqué',
+      telephone: 'non communiqué',
+      snapchat: 'non communiqué',
+      prixFacture: '1 460,00 €'
+    }
+  },
+  { 
+    id: 'damien', 
+    name: 'Damien', 
+    subtitle: 'Consulting gestion réseaux sociaux', 
+    status: 'special',
+    info: {
+      nom: 'Damien',
+      mail: 'non communiqué',
+      telephone: 'non communiqué',
+      snapchat: 'non communiqué',
+      prixFacture: '960,00 €'
+    }
+  },
 ];
 
 // --- Components ---
@@ -136,7 +162,7 @@ const Dashboard = ({ onNavigate }: { onNavigate: (view: View) => void, key?: Rea
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#FACC15] to-transparent opacity-50" />
           <p className="text-black/40 text-[10px] font-bold mb-3 uppercase tracking-[0.2em]">Total généré depuis le début</p>
           <div className="flex items-baseline space-x-2">
-            <h3 className="text-black text-6xl font-black tracking-tighter">970</h3>
+            <h3 className="text-black text-6xl font-black tracking-tighter">1070</h3>
             <span className="text-[#FACC15] text-3xl font-bold">€</span>
           </div>
         </motion.div>
@@ -171,6 +197,14 @@ const BusinessList = ({ onBack, onSelect }: { onBack: () => void, onSelect: (b: 
       </button>
 
       <h2 className="text-3xl font-bold text-white mb-8">Tâches à effectuer</h2>
+
+      <div className="mb-8 p-4 bg-[#FACC15]/10 border border-[#FACC15]/20 rounded-2xl">
+        <p className="text-[#FACC15] text-xs font-medium leading-relaxed">
+          Nouveau client : Damien a été ajouté à la liste des tâches avec une prestation de "Consulting gestion réseaux sociaux".
+          <br />
+          Facture : Le montant de 960,00 € est enregistré dans les détails du client.
+        </p>
+      </div>
 
       <div className="space-y-4">
         {BUSINESSES.map((business) => (
